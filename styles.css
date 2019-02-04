@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500, 600, 700');
 
 body {
-  color: #fff;
+  color: #eeeeee; 
   line-height: 1.2;
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
+  font-weight: 500; 
+  -webkit-font-smoothing: antialised; 
 }
 
 a {
@@ -33,14 +35,119 @@ nav ul {
   list-style-type: none; 
   float: right; 
   display: inline-flex; 
-  margin-top: 25px; 
+  margin: 25px 20px 0 0; 
 }
 
 nav li a {
   margin-right: 20px; 
   color: #eee; 
 }
-/* 
-nav li a:last-child {
-  margin-right: 0px; 
-} */
+
+a.selected::after {
+  content: "";
+  display: inline-block;
+  width: 70%;
+  height: 2px;
+  background-color: #FFB6C4; 
+}
+
+section.hero {
+  height: 90vh; 
+  background-image: url(assets/header-background.svg); 
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+div.hero__text {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  max-width: 900px;
+  z-index: 1;
+}
+
+div.hero__text h2 {
+  font-size: 90px;
+  color: #fe5504; 
+  font-weight: 500; 
+}
+
+section.about {
+  height: 40vh;
+  background-color: #FFB6C4;  
+}
+
+div.about__text {
+  text-align: center; 
+  padding-top: 35px; 
+}
+
+div.about__text h3 {
+  font-size: 36px;
+  color: #2f6a49; 
+  padding-top: 50px;
+}
+
+div.about__text p {
+  max-width: 700px;
+  position: relative;
+  font-size: 26px;
+  color: #2f6a49; 
+  margin-top: 100px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section.food {
+  display: flex;
+  flex-direction: row; 
+  height: 40vh;
+}
+
+div.food__one {
+  width: 50%;
+  background-color: #ffda00; 
+  float: left;
+}
+
+div.food__one-text-container {
+  padding: 60px 80px 50px; 
+}
+
+div.food__one p {
+  color: #2f6a49; 
+  font-size: 26px; 
+}
+
+
+div.food__two {
+  width: 50%;
+  float: right;
+  background-image: url(assets/blue-bowl.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+section.quote {
+  height: 40vh; 
+  background-color: #ffd7b3; 
+
+}
+
+section div.quote__text {
+  padding: 120px 80px;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+section div.quote__text h3 {
+  font-size: 36px;
+  color: #2F6A49; 
+  line-height: 1.4; 
+}
+
+
+
