@@ -1,91 +1,155 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500, 600, 700');
 
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
-  color: #eeeeee; 
-  line-height: 1.2;
+  color: #eeeeee;
+  line-height: 1.4;
   font-family: 'Work Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 500; 
-  -webkit-font-smoothing: antialised; 
+  font-size: 18px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialised;
+  overflow-x: hidden; 
 }
 
 a {
   text-decoration: none;
-  color: none; 
+  color: none;
 }
 
-nav {
-  width: 100%;
-  height: 70px;
-  background-color: #2F6A49; 
-  vertical-align: middle; 
-}
-
-div.lola-logo {
-  float: left; 
-  padding: 20px;
-}
-
-div.lola-logo img {
-  width: 100px;
-  height: auto; 
-}
-
-nav ul {
-  list-style-type: none; 
-  float: right; 
-  display: inline-flex; 
-  margin: 25px 20px 0 0; 
-}
-
-nav li a {
-  margin-right: 20px; 
-  color: #eee; 
-}
-
+a:hover::after,
 a.selected::after {
   content: "";
   display: inline-block;
   width: 70%;
   height: 2px;
-  background-color: #FFB6C4; 
+  background-color: #FFB6C4;
+  transition: 0.5s ease-in-out;
+}
+
+nav {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #2F6A49;
+  vertical-align: middle;
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+nav.scrolled {
+  background-color: #fff;
+  background-color: #000;
+  
+  transition: background-color 1s, height 1s;
+}
+
+/* eye effect */
+
+div.face {
+  position: relative;
+}
+
+div.face img {
+  height: 70px;
+  width: auto; 
+}
+
+div.iris {
+  position: absolute; 
+  /* how far down they are on the image */
+  top: 27px;
+  left: 13px;
+}
+
+div.iris-right {
+  /* based on the coordinates of the svg */
+  left: 57px;
+}
+
+div.iris div {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #eee;
+  border-radius: 3px;
+  transform: translate(-50%, -50%); 
+}
+
+div.lola-logo {
+  float: left;
+  padding: 25px 20px;
+}
+
+div.lola-logo img {
+  width: 100px;
+  height: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  float: right;
+  display: inline-flex;
+  margin: 25px 20px 0 0;
+}
+
+nav li a {
+  margin-right: 20px;
+  color: #eee;
 }
 
 section.hero {
-  height: 90vh; 
-  background-image: url(assets/header-background.svg); 
+  height: 90vh;
+  background-image: url(assets/header-background.svg);
   background-size: cover;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 div.hero__text {
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   max-width: 900px;
-  z-index: 1;
+  letter-spacing: 1px; 
+  line-height: 1.1; 
 }
 
 div.hero__text h2 {
-  font-size: 90px;
-  color: #fe5504; 
-  font-weight: 500; 
+  font-size: 110px;
+  color: transparent; 
+  -webkit-text-stroke: 3px #fe5504; 
 }
 
 section.about {
   height: 40vh;
-  background-color: #FFB6C4;  
+  background-color: #FFB6C4;
 }
 
 div.about__text {
-  text-align: center; 
-  padding-top: 35px; 
+  text-align: center;
+  padding-top: 35px;
 }
 
 div.about__text h3 {
   font-size: 36px;
-  color: #2f6a49; 
+  color: #2f6a49;
   padding-top: 50px;
 }
 
@@ -93,7 +157,7 @@ div.about__text p {
   max-width: 700px;
   position: relative;
   font-size: 26px;
-  color: #2f6a49; 
+  color: #2f6a49;
   margin-top: 100px;
   top: 70%;
   left: 50%;
@@ -102,25 +166,24 @@ div.about__text p {
 
 section.food {
   display: flex;
-  flex-direction: row; 
-  height: 40vh;
+  flex-direction: row;
+  height: 45vh;
 }
 
 div.food__one {
   width: 50%;
-  background-color: #ffda00; 
+  background-color: #ffda00;
   float: left;
 }
 
 div.food__one-text-container {
-  padding: 60px 80px 50px; 
+  padding: 60px 80px 50px;
 }
 
 div.food__one p {
-  color: #2f6a49; 
-  font-size: 26px; 
+  color: #2f6a49;
+  font-size: 26px;
 }
-
 
 div.food__two {
   width: 50%;
@@ -130,24 +193,149 @@ div.food__two {
   background-repeat: no-repeat;
 }
 
-
 section.quote {
-  height: 40vh; 
-  background-color: #ffd7b3; 
-
+  height: 40vh;
+  background-color: #ffd7b3;
 }
 
 section div.quote__text {
   padding: 120px 80px;
-  width: 70vw;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 section div.quote__text h3 {
   font-size: 36px;
-  color: #2F6A49; 
-  line-height: 1.4; 
+  color: #2F6A49;
+  line-height: 1.4;
 }
 
+section.image {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  height: 45vh;
+}
 
+div.col-one,
+div.col-two,
+div.col-three {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+div.col-one {
+  float: left;
+  background-image: url(assets/bowls.jpg);
+}
+
+div.col-third {
+  width: 33.33%;
+}
+
+div.col-two {
+  float: none;
+  background-image: url(assets/vegetables.jpg);
+}
+
+div.col-three {
+  float: right;
+  background-image: url(assets/macaroons.jpg);
+}
+
+section.find-us {
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #2F6A49;
+}
+
+div.find-us-one {
+  float: left;
+}
+
+div.find-us-one p,
+div.find-us-three p {
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+
+  color: #FFB6C4;
+  width: 250px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.map {
+  border-radius: 50%;
+  height: 300px;
+  width: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section.logo {
+  height: 35vh;
+  background-color: #ffd7b3;
+}
+
+section.logo h4 {
+  font-size: 24px;
+  left: 50%;
+  top: 15%;
+  color: #fe5504;
+  position: relative;
+}
+
+div.logo-wrapper {
+  display: flex;
+  flex-direction: row;
+  left: 50%;
+  top: 40%;
+  transform: translate(-20%, -50%);
+  position: relative; 
+}
+
+.logo-inner {
+  width: 150px;
+  height: auto;
+  margin-right: 50px;
+}
+
+.logo-inner-two {
+  width: 300px;
+  height: auto;
+}
+
+footer {
+  width: 100%;
+  height: 100%;
+  background-color: #FFB6C4; 
+  vertical-align: middle;
+  display: flex; 
+  flex-direction: row;
+  /* has to be applied to the parent element, not to each child */
+  justify-content: space-between;
+}
+
+div.lola-logo-two {
+  padding: 25px 20px;  
+}
+
+div.lola-logo-two img {
+  width: 100px;
+  height: auto;
+}
+
+div.copyright p {
+  padding: 25px 20px; 
+  text-align: right;
+  font-size: 20px; 
+  color: #2F6A49; 
+}
