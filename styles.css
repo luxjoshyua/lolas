@@ -18,7 +18,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   -webkit-font-smoothing: antialised;
-  overflow: hidden;
+  overflow-x: hidden; 
 }
 
 a {
@@ -110,6 +110,7 @@ nav ul {
 nav li a {
   margin-right: 20px;
   color: #eee;
+  font-weight: 400; 
 }
 
 section.hero {
@@ -260,7 +261,6 @@ div.find-us-three p {
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
-
   color: #FFB6C4;
   width: 250px;
   text-align: center;
@@ -336,4 +336,21 @@ div.copyright p {
   text-align: right;
   font-size: 20px; 
   color: #2F6A49; 
+}
+
+/* ==== media queries ==== */
+@media only screen (min-width: 414px) and (max-device-width: 800px) {
+  
+  div.hero__text {
+    margin-left: 20px; 
+  }
+
+  div.hero__text h2 {
+    font-size: 110px; 
+  }
+
+  div.food__one p {
+    font-size: 22px; 
+  }
+
 }
