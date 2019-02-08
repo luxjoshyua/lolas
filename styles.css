@@ -30,29 +30,29 @@ a:hover,
 a.selected::after {
   border-bottom: 2px solid #FFB6C4;
   display: inline-block;
-  transition: 0.5s ease-in-out;
+  transition: 0.2s;
 }
 
 nav {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 80px;
   background-color: #2F6A49;
   vertical-align: middle;
-  display: flex; 
+  display: flex;
   flex-direction: row;
-  justify-content: space-between; 
+  justify-content: space-between;
   z-index: 1;
-  align-items: center; 
+  align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 nav.scrolled {
   background-color: #fff;
   background-color: #000;
-  
+
   transition: background-color 1s, height 1s;
 }
 
@@ -64,11 +64,11 @@ div.face {
 
 div.face img {
   height: 70px;
-  width: auto; 
+  width: auto;
 }
 
 div.iris {
-  position: absolute; 
+  position: absolute;
   /* how far down they are on the image */
   top: 27px;
   left: 13px;
@@ -87,7 +87,7 @@ div.iris div {
   height: 6px;
   background-color: #eee;
   border-radius: 3px;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
 }
 
 div.lola-logo {
@@ -102,7 +102,6 @@ div.lola-logo img {
 
 nav ul {
   list-style-type: none;
-  float: right;
   display: inline-flex;
   margin: 10px 20px 0 0;
 }
@@ -110,11 +109,11 @@ nav ul {
 nav li a {
   margin-right: 20px;
   color: #eee;
-  font-weight: 400; 
+  font-weight: 400;
 }
 
 section.hero {
-  height: 90vh;
+  height: 100vh;
   background-image: url(assets/header-background.svg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -126,14 +125,14 @@ div.hero__text {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 900px;
-  letter-spacing: 1px; 
-  line-height: 1.2; 
+  letter-spacing: 1px;
+  line-height: 1.2;
 }
 
 div.hero__text h2 {
   font-size: 110px;
-  color: transparent; 
-  -webkit-text-stroke: 3px #fe5504; 
+  color: transparent;
+  -webkit-text-stroke: 3px #fe5504;
 }
 
 section.about {
@@ -166,13 +165,13 @@ div.about__text p {
 section.food {
   display: flex;
   flex-direction: row;
-  height: 45vh;
+  height: 50vh;
 }
 
 div.food__one {
   width: 50%;
   background-color: #ffda00;
-  float: left;
+  /* float: left; */
 }
 
 div.food__one-text-container {
@@ -186,7 +185,6 @@ div.food__one p {
 
 div.food__two {
   width: 50%;
-  float: right;
   background-image: url(assets/blue-bowl.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -292,12 +290,10 @@ section.logo h4 {
 }
 
 div.logo-wrapper {
-  display: flex;
-  flex-direction: row;
-  left: 50%;
-  top: 40%;
-  transform: translate(-20%, -50%);
-  position: relative; 
+  position: relative;
+  display: inline-block;
+  top: 120px;
+  left: 30%;
 }
 
 .logo-inner {
@@ -314,16 +310,16 @@ div.logo-wrapper {
 footer {
   width: 100%;
   height: 100%;
-  background-color: #FFB6C4; 
+  background-color: #FFB6C4;
   vertical-align: middle;
-  display: flex; 
+  display: flex;
   flex-direction: row;
   /* has to be applied to the parent element, not to each child */
   justify-content: space-between;
 }
 
 div.lola-logo-two {
-  padding: 25px 20px;  
+  padding: 25px 20px;
 }
 
 div.lola-logo-two img {
@@ -332,25 +328,205 @@ div.lola-logo-two img {
 }
 
 div.copyright p {
-  padding: 25px 20px; 
+  padding: 25px 20px;
   text-align: right;
-  font-size: 20px; 
-  color: #2F6A49; 
+  font-size: 20px;
+  color: #2F6A49;
 }
 
+
+
+
+
 /* ==== media queries ==== */
-@media only screen (min-width: 414px) and (max-device-width: 800px) {
-  
+
+/* Portrait and Landscape */
+@media (max-width: 910px) {
+
   div.hero__text {
-    margin-left: 20px; 
+    margin-left: 20px;
   }
 
   div.hero__text h2 {
-    font-size: 110px; 
+    font-size: 100px;
   }
 
   div.food__one p {
-    font-size: 22px; 
+    font-size: 22px;
   }
+
+  div.find-us-one p,
+  div.find-us-three p {
+    font-size: 22px;
+  }
+
+
+  div.logo-wrapper {
+    left: 30%;
+  }
+
+  .logo-inner {
+    width: 100px;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  nav {}
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 45px;
+    left: 18px;
+  }
+
+  nav li a {
+    font-size: 16px;
+  }
+
+  div.lola-logo {
+    position: relative;
+    top: -15px;
+    left: 20px;
+    padding: 0px;
+  }
+
+  div.lola-logo img {
+    width: 80px;
+  }
+
+  div.face {
+    display: none;
+  }
+
+  section.hero {
+    height: 100vh;
+  }
+
+  div.hero__text h2 {
+    font-size: 65px;
+    -webkit-text-stroke: 2px #fe5504;
+  }
+
+  div.about__text p {
+    max-width: 400px;
+    font-size: 16px;
+    margin: 90px auto;
+    padding-right: 40px;
+  }
+
+  div.about__text h3 {
+    font-size: 24px;
+    padding-top: 0px;
+  }
+
+  section.food {
+    height: 65vh;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  div.food__one {
+    width: 100%;
+    height: 70%;
+  }
+
+  div.food__one-text-container {
+    padding: 25px;
+    margin-bottom: 0px;
+  }
+
+  div.food__one p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  div.food__two {
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+  }
+
+  section.quote {
+    height: 30vh;
+  }
+
+  section div.quote__text {
+    padding: 40px;
+  }
+
+  section div.quote__text h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  section.image {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  div.col-third {
+    width: 100%;
+    height: 100%;
+  }
+
+  section.find-us {
+    height: 75vh;
+    flex-direction: column;
+  }
+
+  div.find-us-one {
+    margin: 20px 0;
+  }
+
+  div.find-us-one p,
+  div.find-us-three p {
+    font-size: 16px;
+  }
+
+  .map {
+    height: 200px;
+  }
+
+  div.find-us-three {
+    margin: 20px 0px;
+  }
+
+  section.logo {
+    height: 50vh;
+  }
+
+  section.logo h4 {
+    padding-top: 30px;
+    margin: 0px auto;
+    text-align: center;
+    top: 0;
+    left: 0;
+  }
+
+  div.logo-wrapper {
+    position: relative;
+    left: 30%;
+    top: 7%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-inner {
+    width: 130px;
+    padding-bottom: 15px;
+  }
+
+  .logo-inner-two {
+    position: relative;
+    width: 250px;
+    height: auto;
+    left: -50px;
+  }
+
+
 
 }
