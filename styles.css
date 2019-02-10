@@ -18,7 +18,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   -webkit-font-smoothing: antialised;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 a {
@@ -290,10 +290,11 @@ section.logo h4 {
 }
 
 div.logo-wrapper {
-  position: relative;
-  display: inline-block;
-  top: 120px;
-  left: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 80px;
+  flex-wrap: wrap;
 }
 
 .logo-inner {
@@ -408,13 +409,13 @@ div.copyright p {
 
   div.hero__text {
     padding: 0px 10px;
-    top: 40%; 
+    top: 40%;
   }
 
   div.hero__text h2 {
     font-size: 65px;
     -webkit-text-stroke: 2px #fe5504;
-    line-height: 1.4; 
+    line-height: 1.4;
   }
 
   div.about__text p {
